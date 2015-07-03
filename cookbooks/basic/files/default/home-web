@@ -1,0 +1,10 @@
+read -r VERSION < wdcom/.ruby-version
+if [ -f .rbenv/versions/${VERSION}/bin/ruby ]; then
+  echo "ruby ${VERSION} is already installed"
+else
+  rbenv install $VERSION
+fi
+cd wdcom
+gem install bundler --no-rdoc --no-ri
+rbenv rehash
+bundle install --without=mac ]

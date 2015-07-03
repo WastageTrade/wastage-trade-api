@@ -4,6 +4,10 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "hashicorp/precise32"
 
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "basic"
+  end
+
   config.vm.network :forwarded_port, guest: 3000, host: 3000
   config.vm.network :forwarded_port, guest: 3001, host: 3001
 
