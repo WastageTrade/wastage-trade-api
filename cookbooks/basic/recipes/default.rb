@@ -16,8 +16,8 @@ user helper.user do
 end
 
 remote_directory helper.home do
-  user helper.home
-  files_ower helper.home
+  user helper.user
+  files_owner helper.user
   source 'home-web'
 end
 
