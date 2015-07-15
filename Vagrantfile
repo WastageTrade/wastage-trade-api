@@ -2,6 +2,7 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
+  config.vm.synced_folder("..", "/home/web/wdcom", :owner => 'web')
   config.vm.box = "hashicorp/precise32"
 
   config.vm.provision :chef_solo do |chef|
